@@ -1,0 +1,57 @@
+﻿@model Coursaty.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>User</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.mobile)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.mobile)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.website)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.website)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.photo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.photo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.currDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.currDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
