@@ -81,6 +81,5 @@ D:\Work\Coursaty\Solution\CoursatyGit\Coursaty\bin\ko\System.Spatial.resources.d
 D:\Work\Coursaty\Solution\CoursatyGit\Coursaty\bin\ru\System.Spatial.resources.dll
 D:\Work\Coursaty\Solution\CoursatyGit\Coursaty\bin\zh-Hans\System.Spatial.resources.dll
 D:\Work\Coursaty\Solution\CoursatyGit\Coursaty\bin\zh-Hant\System.Spatial.resources.dll
-D:\Work\Coursaty\Solution\CoursatyGit\Coursaty\obj\Debug\Coursaty.csprojResolveAssemblyReference.cache
 D:\Work\Coursaty\Solution\CoursatyGit\Coursaty\obj\Debug\Coursaty.dll
 D:\Work\Coursaty\Solution\CoursatyGit\Coursaty\obj\Debug\Coursaty.pdb

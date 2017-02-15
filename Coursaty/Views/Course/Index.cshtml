@@ -7,69 +7,34 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.link)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.rate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.views)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Instructor.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Track.name)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.link)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.image)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.rate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.views)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Instructor.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Track.name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
+@foreach (var course in Model)
+{
+    <div class="course">
+        <div class="image">
+            <a href="@Url.Action("details", new { id = @course.id })"><img src="~/images/@course.image" alt="@course.title"/></a>
+        </div>
+        <div class="title">
+            <h2>@course.title</h2>
+        </div>
+        <div class="meta">
+            @{
+                    if (course.description == null)
+                    {
+                        <h4><b>المزيد...</b></h4>
+                    }
+                    else if (course.description.ToString().Length > 30)
+                    {
+                        <h4>@course.description.ToString().Substring(0, 30) + "<b>المزيد...</b>"</h4>
+                    }
+                    else
+                    {
+                        <h4>@course.description.ToString() + "<b>المزيد...</b>"</h4>
+                    }
+            }
+        </div>
+    </div>
 }
 
-</table>

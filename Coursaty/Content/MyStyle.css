@@ -1,0 +1,19 @@
+﻿div .course{
+    width : 180px;
+    height : 200px;
+    background-color : #808080;
+    color : #1f1f1d;
+}
+
+.course .image{
+    width : 120px;
+    height : 120px;
+    border : 1px solid gray;
+    margin : 15px;
+}
+
+.image img{
+    width : 120px;
+    height : 120px;
+    padding : 0px;
+}
