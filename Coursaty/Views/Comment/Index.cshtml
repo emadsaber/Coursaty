@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Coursaty.Models.Comment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.currDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comment1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment2.comment1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cours.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToDelete)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.currDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comment1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment2.comment1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cours.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToDelete)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

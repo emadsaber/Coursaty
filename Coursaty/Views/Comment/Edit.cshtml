@@ -1,0 +1,78 @@
+﻿@model Coursaty.Models.Comment
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Comment</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.currDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.currDate)
+            @Html.ValidationMessageFor(model => model.currDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.comment1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.comment1)
+            @Html.ValidationMessageFor(model => model.comment1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReplyTo, "Comment2")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ReplyTo", String.Empty)
+            @Html.ValidationMessageFor(model => model.ReplyTo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userId, "User")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("userId", String.Empty)
+            @Html.ValidationMessageFor(model => model.userId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.courseId, "Cours")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("courseId", String.Empty)
+            @Html.ValidationMessageFor(model => model.courseId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ToDelete)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ToDelete)
+            @Html.ValidationMessageFor(model => model.ToDelete)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
