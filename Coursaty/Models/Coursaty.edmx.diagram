@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4b99d224dfe341e795391b6fb4e71471" Name="Diagram1">
+        <EntityTypeShape EntityType="CoursatyModel.Comment" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoursatyModel.Cours" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoursatyModel.Instructor" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoursatyModel.Track" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoursatyModel.User" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoursatyModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="CoursatyModel.fk_Comments" ManuallyRouted="false" />
+        <AssociationConnector Association="CoursatyModel.fk_Comments_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CoursatyModel.fk_comments_courses" ManuallyRouted="false" />
+        <AssociationConnector Association="CoursatyModel.fk_courses_instructors" ManuallyRouted="false" />
+        <AssociationConnector Association="CoursatyModel.fk_courses_tracks" ManuallyRouted="false" />
+        <AssociationConnector Association="CoursatyModel.fk_Tracks" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
