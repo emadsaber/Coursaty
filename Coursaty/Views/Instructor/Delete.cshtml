@@ -1,0 +1,68 @@
+﻿@model Coursaty.Models.Instructor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Instructor</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.mobile)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.mobile)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.website)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.website)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.currDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.currDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.photo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.photo)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

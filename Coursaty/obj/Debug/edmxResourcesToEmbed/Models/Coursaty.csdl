@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoursatyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="currDate" Type="DateTime" Precision="0" />
+    <Property Name="comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ReplyTo" Type="Int32" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="courseId" Type="Int32" Nullable="false" />
+    <Property Name="ToDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.fk_Comments" FromRole="Comments" ToRole="Users" />
+    <NavigationProperty Name="Comments1" Relationship="Self.fk_Comments_0" FromRole="Comments" ToRole="Comments1" />
+    <NavigationProperty Name="Comment2" Relationship="Self.fk_Comments_0" FromRole="Comments1" ToRole="Comments" />
+    <NavigationProperty Name="Cours" Relationship="Self.fk_comments_courses" FromRole="Comments" ToRole="Courses" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rate" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="views" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="instructorId" Type="Int32" Nullable="false" />
+    <Property Name="trackId" Type="Int32" />
+    <NavigationProperty Name="Comments" Relationship="Self.fk_comments_courses" FromRole="Courses" ToRole="Comments" />
+    <NavigationProperty Name="Instructor" Relationship="Self.fk_courses_instructors" FromRole="Courses" ToRole="Instructors" />
+    <NavigationProperty Name="Track" Relationship="Self.fk_courses_tracks" FromRole="Courses" ToRole="Tracks" />
+  </EntityType>
+  <EntityType Name="Instructor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="currDate" Type="DateTime" Precision="0" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Courses" Relationship="Self.fk_courses_instructors" FromRole="Instructors" ToRole="Courses" />
+  </EntityType>
+  <EntityType Name="Track">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="parentTrack" Type="Int32" />
+    <Property Name="ToDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Courses" Relationship="Self.fk_courses_tracks" FromRole="Tracks" ToRole="Courses" />
+    <NavigationProperty Name="Tracks1" Relationship="Self.fk_Tracks" FromRole="Tracks" ToRole="Tracks1" />
+    <NavigationProperty Name="Track1" Relationship="Self.fk_Tracks" FromRole="Tracks1" ToRole="Tracks" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mobile" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="currDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Comments" Relationship="Self.fk_Comments" FromRole="Users" ToRole="Comments" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="fk_Comments">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Comments_0">
+    <End Role="Comments" Type="Self.Comment" Multiplicity="0..1" />
+    <End Role="Comments1" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Comments1">
+        <PropertyRef Name="ReplyTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_comments_courses">
+    <End Role="Courses" Type="CoursatyModel.Course" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="courseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_courses_instructors">
+    <End Role="Instructors" Type="Self.Instructor" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Courses" Type="CoursatyModel.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instructors">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="instructorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_courses_tracks">
+    <End Role="Tracks" Type="Self.Track" Multiplicity="0..1" />
+    <End Role="Courses" Type="CoursatyModel.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tracks">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="trackId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tracks">
+    <End Role="Tracks" Type="Self.Track" Multiplicity="0..1" />
+    <End Role="Tracks1" Type="Self.Track" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tracks">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tracks1">
+        <PropertyRef Name="parentTrack" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CoursatyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="Courses" EntityType="CoursatyModel.Course" />
+    <EntitySet Name="Instructors" EntityType="Self.Instructor" />
+    <EntitySet Name="Tracks" EntityType="Self.Track" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="fk_Comments" Association="Self.fk_Comments">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Comments_0" Association="Self.fk_Comments_0">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="Comments1" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_comments_courses" Association="Self.fk_comments_courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_courses_instructors" Association="Self.fk_courses_instructors">
+      <End Role="Instructors" EntitySet="Instructors" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="fk_courses_tracks" Association="Self.fk_courses_tracks">
+      <End Role="Tracks" EntitySet="Tracks" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tracks" Association="Self.fk_Tracks">
+      <End Role="Tracks" EntitySet="Tracks" />
+      <End Role="Tracks1" EntitySet="Tracks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
