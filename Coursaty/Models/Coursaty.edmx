@@ -202,7 +202,7 @@
           <NavigationProperty Name="Comment2" Relationship="Self.fk_Comments_0" FromRole="Comments1" ToRole="Comments" />
           <NavigationProperty Name="Cours" Relationship="Self.fk_comments_courses" FromRole="Comments" ToRole="Courses" />
         </EntityType>
-        <EntityType Name="Cours">
+        <EntityType Name="Course">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -293,7 +293,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_comments_courses">
-          <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+          <End Role="Courses" Type="CoursatyModel.Course" Multiplicity="1" />
           <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Courses">
@@ -308,7 +308,7 @@
           <End Role="Instructors" Type="Self.Instructor" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+          <End Role="Courses" Type="CoursatyModel.Course" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Instructors">
               <PropertyRef Name="id" />
@@ -320,7 +320,7 @@
         </Association>
         <Association Name="fk_courses_tracks">
           <End Role="Tracks" Type="Self.Track" Multiplicity="0..1" />
-          <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+          <End Role="Courses" Type="CoursatyModel.Course" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tracks">
               <PropertyRef Name="id" />
@@ -344,7 +344,7 @@
         </Association>
         <EntityContainer Name="CoursatyEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Comments" EntityType="Self.Comment" />
-          <EntitySet Name="Courses" EntityType="Self.Cours" />
+          <EntitySet Name="Courses" EntityType="CoursatyModel.Course" />
           <EntitySet Name="Instructors" EntityType="Self.Instructor" />
           <EntitySet Name="Tracks" EntityType="Self.Track" />
           <EntitySet Name="Users" EntityType="Self.User" />
@@ -394,7 +394,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Courses">
-            <EntityTypeMapping TypeName="CoursatyModel.Cours">
+            <EntityTypeMapping TypeName="CoursatyModel.Course">
               <MappingFragment StoreEntitySet="Courses">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />

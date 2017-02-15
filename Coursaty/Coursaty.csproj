@@ -193,9 +193,6 @@
     <Compile Include="Models\Comment.cs">
       <DependentUpon>Coursaty.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cours.cs">
-      <DependentUpon>Coursaty.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Coursaty.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -210,6 +207,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Coursaty.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Course.cs">
+      <DependentUpon>Coursaty.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Instructor.cs">
       <DependentUpon>Coursaty.tt</DependentUpon>

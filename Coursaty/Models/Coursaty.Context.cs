@@ -26,7 +26,7 @@ namespace Coursaty.Models
         }
     
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<Cours> Courses { get; set; }
+        public DbSet<Course> Courses { get; set; }
         public DbSet<Instructor> Instructors { get; set; }
         public DbSet<Track> Tracks { get; set; }
         public DbSet<User> Users { get; set; }

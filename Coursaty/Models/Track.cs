@@ -16,7 +16,7 @@ namespace Coursaty.Models
     {
         public Track()
         {
-            this.Courses = new HashSet<Cours>();
+            this.Courses = new HashSet<Course>();
             this.Tracks1 = new HashSet<Track>();
         }
     
@@ -25,7 +25,7 @@ namespace Coursaty.Models
         public Nullable<int> parentTrack { get; set; }
         public bool ToDelete { get; set; }
     
-        public virtual ICollection<Cours> Courses { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
         public virtual ICollection<Track> Tracks1 { get; set; }
         public virtual Track Track1 { get; set; }
     }

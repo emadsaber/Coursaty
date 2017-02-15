@@ -16,7 +16,7 @@ namespace Coursaty.Models
     {
         public Instructor()
         {
-            this.Courses = new HashSet<Cours>();
+            this.Courses = new HashSet<Course>();
         }
     
         public int id { get; set; }
@@ -28,6 +28,6 @@ namespace Coursaty.Models
         public string description { get; set; }
         public string photo { get; set; }
     
-        public virtual ICollection<Cours> Courses { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
     }
 }

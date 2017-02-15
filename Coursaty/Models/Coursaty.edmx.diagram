@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="4b99d224dfe341e795391b6fb4e71471" Name="Diagram1">
         <EntityTypeShape EntityType="CoursatyModel.Comment" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CoursatyModel.Cours" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoursatyModel.Course" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="CoursatyModel.Instructor" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CoursatyModel.Track" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="CoursatyModel.User" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />

@@ -30,6 +30,6 @@ namespace Coursaty.Models
         public virtual User User { get; set; }
         public virtual ICollection<Comment> Comments1 { get; set; }
         public virtual Comment Comment2 { get; set; }
-        public virtual Cours Cours { get; set; }
+        public virtual Course Cours { get; set; }
     }
 }

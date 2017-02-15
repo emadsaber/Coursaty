@@ -12,9 +12,9 @@ namespace Coursaty.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Cours
+    public partial class Course
     {
-        public Cours()
+        public Course()
         {
             this.Comments = new HashSet<Comment>();
         }
