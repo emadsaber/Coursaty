@@ -1,0 +1,71 @@
+﻿@model Coursaty.Models.Course
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Course</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.link)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.link)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.image)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.image)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.rate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.rate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.views)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.views)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Instructor.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Instructor.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Track.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Track.name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
