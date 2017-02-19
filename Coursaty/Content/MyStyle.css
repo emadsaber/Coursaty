@@ -1,19 +1,39 @@
-﻿div .course{
-    width : 180px;
-    height : 200px;
-    background-color : #808080;
-    color : #1f1f1d;
-}
+﻿/*****Customizing Courses Page*******/
 
-.course .image{
-    width : 120px;
-    height : 120px;
-    border : 1px solid gray;
-    margin : 15px;
+.courseLink{
+    margin-right: 15px;
+    margin-bottom: 35px;
+    background-color : #a6c2dd;
+    height:auto;
+    width:250px;
+    display:inline-block;
 }
+    div .course{
+    
+        display:inline-block;
+        width:250px;
+        text-align:center;
+    }
+        div .course .title
+        {
+            font-family: 'Monotype Corsiva';
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+        div .course .image{
+            height : 120px;
+            margin : 15px;
+            text-align:center;
+            display:table;
+            margin:0 auto;
+        }
+            div .course .image img{
+                    width:250px;
+                    height : 160px;
+                    padding : 0px;
+                    border-width : 2px;
+                    border-color: #000;
 
-.image img{
-    width : 120px;
-    height : 120px;
-    padding : 0px;
-}
+            }
+
+/********End of Courses Page*********/

@@ -12,29 +12,34 @@
 
 @foreach (var course in Model)
 {
-    <div class="course">
-        <div class="image">
-            <a href="@Url.Action("details", new { id = @course.id })"><img src="~/images/@course.image" alt="@course.title"/></a>
-        </div>
-        <div class="title">
-            <h2>@course.title</h2>
-        </div>
-        <div class="meta">
-            @{
+    <a class="courseLink" href="@Url.Action("details", new { id = @course.id })">
+        <div class="course">
+
+            <div class="image">
+                <img src="~/images/@course.image" alt="@course.title" />
+            </div>
+            <div class="title">
+                @course.title
+            </div>
+            <div class="meta">
+                @{
                     if (course.description == null)
                     {
-                        <h4><b>المزيد...</b></h4>
+                        <b>...More...</b>
                     }
-                    else if (course.description.ToString().Length > 30)
+                    else if (course.description.ToString().Length > 90)
                     {
-                        <h4>@course.description.ToString().Substring(0, 30) + "<b>المزيد...</b>"</h4>
+                        @course.description.ToString().Substring(0, 90)
+                        <b>...More...</b>
                     }
                     else
                     {
-                        <h4>@course.description.ToString() + "<b>المزيد...</b>"</h4>
+                        @course.description.ToString()
+                        <b>...More...</b>
                     }
-            }
+                }
+            </div>
         </div>
-    </div>
+    </a>
 }
 
