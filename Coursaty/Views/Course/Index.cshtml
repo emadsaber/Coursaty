@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Coursaty.Models.Course>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "View all courses";
 }
 
-<h2>Index</h2>
+<h2>Browse Courses</h2>
 
 <p>
     @*@Html.ActionLink("Create New", "Create")*@
@@ -14,7 +14,6 @@
 {
     <a class="courseLink" href="@Url.Action("details", new { id = @course.id })">
         <div class="course">
-
             <div class="image">
                 <img src="~/images/@course.image" alt="@course.title" />
             </div>
@@ -42,4 +41,3 @@
         </div>
     </a>
 }
-

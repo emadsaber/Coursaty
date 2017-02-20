@@ -292,6 +292,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Coursaty.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\profile.jpg" />
     <Content Include="Models\Coursaty.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Coursaty.edmx</DependentUpon>
