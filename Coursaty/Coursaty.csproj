@@ -215,6 +215,7 @@
     <Compile Include="Models\Course.cs">
       <DependentUpon>Coursaty.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Helpers\CourseHelper.cs" />
     <Compile Include="Models\Instructor.cs">
       <DependentUpon>Coursaty.tt</DependentUpon>
     </Compile>
