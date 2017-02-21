@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin Control Panel</h2>
+<div class="section">
+    <h3>Manage Courses</h3>
+    @Html.ActionLink("Add Course", "Create", "Course")
+    @Html.ActionLink("Manage Courses", "Index", "Course")
+</div>
+<div class="section">
+    <h3>Manage Instructors</h3>
+    @Html.ActionLink("Add Instructor", "Create", "Instructor")
+    @Html.ActionLink("Manage Instructors", "Index", "Instructor")
+</div>
+<div class="section">
+    <h3>Manage Tracks</h3>
+    @Html.ActionLink("Add Track", "Create", "Track")
+    @Html.ActionLink("Manage Tracks", "Index", "Track")
+</div>
+<div class="section">
+    <h3>Manage Comments</h3>
+    @Html.ActionLink("Manage Comments", "Index", "Comment")
+</div>
+<div class="Users">
+    <h3>Manage Users</h3>
+    @Html.ActionLink("Add User", "Create", "User")
+    @Html.ActionLink("Manage Users", "Index", "User")
+</div>
