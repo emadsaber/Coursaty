@@ -99,3 +99,17 @@
 }*/
 
 /******************************/
+/**********Course Details**********/
+div.editor-field .image 
+{
+    box-shadow: 3px 3px 20px #000;
+    border: 2px solid #000;
+    width:250px;
+    height:160px;
+    border-radius: 20px;
+}
+div.editor-field .image img{
+    width: 250px;
+    height: 160px;
+    border-radius: 20px;
+}

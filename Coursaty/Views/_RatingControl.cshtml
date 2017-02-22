@@ -1,0 +1,77 @@
+﻿@model Coursaty.Models.Course
+<html>
+<body onload="display(@Model.rate - 1)">
+<style type="text/css">
+    .img-style1 {
+        width: 22px;
+        height: 22px;
+    }
+
+    .star {
+        display: inline-block;
+        cursor:pointer;
+    }
+</style>
+
+<script type="text/javascript">
+    function display(index) {
+        if (index == -1) {
+            document.getElementById("star0").innerHTML = empty(0);
+            document.getElementById("star1").innerHTML = empty(1);
+            document.getElementById("star2").innerHTML = empty(2);
+            document.getElementById("star3").innerHTML = empty(3);
+            document.getElementById("star4").innerHTML = empty(4);
+        }
+        if (index == 0) {
+            document.getElementById("star0").innerHTML = full(0);
+            document.getElementById("star1").innerHTML = empty(1);
+            document.getElementById("star2").innerHTML = empty(2);
+            document.getElementById("star3").innerHTML = empty(3);
+            document.getElementById("star4").innerHTML = empty(4);
+        } else if (index == 1) {
+            document.getElementById("star0").innerHTML = full (0);
+            document.getElementById("star1").innerHTML = full (1);
+            document.getElementById("star2").innerHTML = empty(2);
+            document.getElementById("star3").innerHTML = empty(3);
+            document.getElementById("star4").innerHTML = empty(4);
+        } else if (index == 2) {
+            document.getElementById("star0").innerHTML = full(0);
+            document.getElementById("star1").innerHTML = full(1);
+            document.getElementById("star2").innerHTML = full(2);
+            document.getElementById("star3").innerHTML = empty(3);
+            document.getElementById("star4").innerHTML = empty(4);
+        } else if (index == 3) {
+            document.getElementById("star0").innerHTML = full(0);
+            document.getElementById("star1").innerHTML = full(1);
+            document.getElementById("star2").innerHTML = full(2);
+            document.getElementById("star3").innerHTML = full(3);
+            document.getElementById("star4").innerHTML = empty(4);
+        } else if (index == 4) {
+            document.getElementById("star0").innerHTML = full(0);
+            document.getElementById("star1").innerHTML = full(1);
+            document.getElementById("star2").innerHTML = full(2);
+            document.getElementById("star3").innerHTML = full(3);
+            document.getElementById("star4").innerHTML = full(4);
+        }
+    }
+    function empty(index) {
+        var e = "<img onclick='display(" + index + ")' class='img-style1' src='/Images/star_empty.png' />";
+        return e;
+    }
+    function full(index) {
+        var f = "<img onclick='display(" + index + ")' class='img-style1' src='/Images/star_full.png' />";
+        return f;
+    }
+</script>
+
+<div class="rating">
+    <div class="star" id="star0"><img onclick="display(0)" class="img-style1" src="~/Images/star_empty.png" /></div>
+    <div class="star" id="star1"><img onclick="display(1)" class="img-style1" src="~/Images/star_empty.png" /></div>
+    <div class="star" id="star2"><img onclick="display(2)" class="img-style1" src="~/Images/star_empty.png" /></div>
+    <div class="star" id="star3"><img onclick="display(3)" class="img-style1" src="~/Images/star_empty.png" /></div>
+    <div class="star" id="star4"><img onclick="display(4)" class="img-style1" src="~/Images/star_empty.png" /></div>
+</div>
+
+
+</body>
+</html>

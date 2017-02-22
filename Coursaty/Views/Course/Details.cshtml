@@ -5,66 +5,128 @@
 }
 
 <h2>Details</h2>
+<table>
+    <tr>
+        <td>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.title)
+            </div>
+        </td>
+        <td>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.title)
+            </div>
+        </td>
+    </tr>
 
-<fieldset>
-    <legend>Course</legend>
+    <tr>
+        <td>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.link)
+            </div>
+        </td>
+        <td>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.link)
+            </div>
+        </td>
+    </tr>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.title)
-    </div>
+    <tr>
+        <td>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.image)
+            </div>
+        </td>
+        <td>
+            <div class="editor-field">
+                <div class="image">
+                    <img src="~/images/@Model.image" alt="@Model.title" />
+                </div>
+            </div>
+        </td>
+    </tr>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.link)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.link)
-    </div>
+    <tr>
+        <td>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.rate)
+            </div>
+        </td>
+        <td>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.rate)
+                
+                @Html.Partial("~/Views/_RatingControl.cshtml")
+            </div>
+        </td>
+    </tr>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.image)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.image)
-    </div>
+    <tr>
+        <td>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.views)
+            </div>
+        </td>
+        <td>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.views)
+            </div>
+        </td>
+    </tr>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.rate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.rate)
-    </div>
+    <tr>
+        <td>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.description)
+            </div>
+        </td>
+        <td>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.description)
+            </div>
+        </td>
+    </tr>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.views)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.views)
-    </div>
+    <tr>
+        <td>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.instructorId, "Instructor")
+            </div>
+        </td>
+        <td>
+            <div class="editor-field">
+                @if(@ViewData["InstructorName"] == "" ||
+                @ViewData["InstructorName"] == null)
+                 {
+                    <text>---</text>
+                 }else{
+                    @Html.DisplayFor(model => model.Instructor.name)
+                }
+            </div>
+        </td>
+    </tr>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.description)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.description)
-    </div>
+    <tr>
+        <td>
+            <div class="editor-label">
+                  @Html.LabelFor(model => model.trackId, "Track")
+            </div>
+        </td>
+        <td>
+            <div class="editor-field">
+                @if(@ViewData["TrackName"] == "" || 
+                @ViewData["TrackName"] == null)
+                 {
+                    <text>---</text>
+                 }else{
+                    @Html.DisplayFor(model => model.Track.name)
+                 }
+            </div>
+        </td>
+    </tr>
+</table>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Instructor.name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Instructor.name)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Track.name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Track.name)
-    </div>
-</fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
     @Html.ActionLink("Back to List", "Index")

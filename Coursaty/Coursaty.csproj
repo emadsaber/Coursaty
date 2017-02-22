@@ -295,6 +295,8 @@
       <LastGenOutput>Coursaty.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Images\profile.jpg" />
+    <Content Include="Images\star_empty.png" />
+    <Content Include="Images\star_full.png" />
     <Content Include="Models\Coursaty.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Coursaty.edmx</DependentUpon>
@@ -323,6 +325,7 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\RatingControl.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -368,7 +371,9 @@
     <Content Include="Views\Instructor\Edit.cshtml" />
     <Content Include="Views\Instructor\Delete.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
-    <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Course\Details.cshtml">
+      <BrowseToURL>~/Course/Details</BrowseToURL>
+    </Content>
     <Content Include="Views\Course\Create.cshtml" />
     <Content Include="Views\Course\Edit.cshtml" />
     <Content Include="Views\Course\Delete.cshtml" />
@@ -388,6 +393,7 @@
     <Content Include="Views\Track\Edit.cshtml" />
     <Content Include="Views\Track\Delete.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\_RatingControl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

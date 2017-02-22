@@ -28,10 +28,21 @@ namespace Coursaty.Controllers
         public ActionResult Details(int id = 0)
         {
             Course course = db.Courses.Find(id);
+            try
+            {
+                course.views += 1;
+                db.SaveChanges();
+            }
+            catch (Exception ex) 
+            {
+                this.ModelState.AddModelError("Increment Views", ex);
+            }
             if (course == null)
             {
                 return HttpNotFound();
             }
+            if(course.Track != null && course.Track.name != null) ViewData["TrackName"] = course.Track.name;
+            if (course.Instructor != null && course.Instructor.name != null) ViewData["InstructorName"] = course.Instructor.name;
             return View(course);
         }
 
